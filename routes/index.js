@@ -36,7 +36,7 @@ router.get('/zoek/:ei', function(req, res) {
     status = 'onbekend';
   };
   if ( status == 'veilig') {
-    res.render('results', { Title: 'Dit ei is veilig', Results: 'Deze productiecode komt niet voor in de lijst.', Code: req.params.ei } );
+    res.render('results', { Title: 'Dit ei is veilig', Results: 'Deze productiecode komt niet voor in de lijst met onveilige eieren.', Code: req.params.ei } );
   } else if ( status == 'onveilig-acuut') {
     res.render('results', { Title: 'Je hebt een besmet ei gekocht', Results: 'Deze productiecode komt voor in de lijst met besmette eieren. Het advies is deze eieren niet te eten.', Code: req.params.ei } );
   } else if ( status == 'onveilig-kinderen') {
